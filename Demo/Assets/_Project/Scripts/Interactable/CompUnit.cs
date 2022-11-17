@@ -5,12 +5,14 @@ using InventorySystem;
 
 namespace InteractionSystem
 {
-    public class CompUnit : Interactable
+    public class CompUnit : MonoBehaviour, Iinteractable
     {
         [SerializeField] Computer _computer;
+        [SerializeField] private float _radius = 5;
+        public float radius { get { return _radius; } }
         Item _selectedItem;
 
-        public override void Interact()
+        public void Interact()
         {
             _selectedItem = Inventory.instance.selectedItem;
             if (_selectedItem && _selectedItem.name == _computer.expectedItemName)
@@ -26,7 +28,8 @@ namespace InteractionSystem
         private void UseFlashDrive()
         {
             Inventory.instance.Remove(Inventory.instance.selectedItem);
-            _computer.UseFlashDrive();
+            //_computer.UseFlashDrive();
+            GameEvents.instance.FlashDriveUsed();
         }
 
     }

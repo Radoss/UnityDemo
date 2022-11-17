@@ -6,17 +6,16 @@ using UnityEngine;
 public class CompIcon : MonoBehaviour
 {
     [SerializeField] AudioClip _clip;
-    AudioSource _source;
 
     private void Start()
     {
-        _source = Player.instance.audioSource;
         Button btn = GetComponent<Button>();
         btn.onClick.AddListener(delegate { OnCompIconBtnClick(); });
     }
 
     public void OnCompIconBtnClick()
     {
+        AudioSource _source = Player.instance.audioSource;
         _source.clip = _clip;
         _source.Play();
     }

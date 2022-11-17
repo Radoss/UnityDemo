@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour
     [SerializeField] AudioClip _welcomeClip;
     public AudioSource audioSource { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }

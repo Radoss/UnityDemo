@@ -2,14 +2,10 @@
 
 namespace InteractionSystem
 {
-    public class Interactable : MonoBehaviour
+    public interface Iinteractable
     {
-        public float radius = 5f;
-
-        public virtual void Interact()
-        {
-            //для переопределения
-        }
+        float radius { get; }
+        void Interact();
 
     }
 }

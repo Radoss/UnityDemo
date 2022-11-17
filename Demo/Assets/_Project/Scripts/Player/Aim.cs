@@ -11,7 +11,7 @@ public class Aim : MonoBehaviour
 
     Camera _mainCamera; 
 
-    private void Start()
+    private void Awake()
     {
         _mainCamera = Camera.main;
     }
@@ -29,8 +29,8 @@ public class Aim : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             Transform objectHit = hit.transform;
-            Interactable interractable;
-            if (objectHit.TryGetComponent<Interactable>(out interractable))
+            Iinteractable interractable;
+            if (objectHit.TryGetComponent<Iinteractable>(out interractable))
             {
                 if (hit.distance < interractable.radius)
                 {

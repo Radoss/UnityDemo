@@ -4,11 +4,13 @@
 
 namespace InteractionSystem
 {
-    public class StoryTeller : Interactable
+    public class StoryTeller : MonoBehaviour, Iinteractable
     {
         [SerializeField] AudioClip _storyClip;
+        [SerializeField] private float _radius = 5;
+        public float radius { get { return _radius; } }
 
-        public override void Interact()
+        public void Interact()
         {
             PlayStory();
         }

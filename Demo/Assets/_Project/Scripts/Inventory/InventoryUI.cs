@@ -17,6 +17,9 @@ namespace InventorySystem
 
         private void Start()
         {
+            GameEvents.instance.onHideInventoryRequested += onHideInventoryRequested;
+            GameEvents.instance.onShowInventoryRequested += onShowInventoryRequested;
+
             _inventory = Inventory.instance;
             _inventory.onItemsChangedCallback += UpdateUI;
             _inventorySlots = new List<InventorySlotUI>();
@@ -64,6 +67,16 @@ namespace InventorySystem
                     _inventorySlots[i].Clear();
                 }
             }
+        }
+
+        private void onHideInventoryRequested()
+        {
+            gameObject.SetActive(false);
+        }
+
+        private void onShowInventoryRequested()
+        {
+            gameObject.SetActive(true);
         }
     }
 }

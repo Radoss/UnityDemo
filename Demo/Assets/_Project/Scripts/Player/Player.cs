@@ -6,7 +6,9 @@ public class Player : MonoBehaviour
 {
     public static Player instance { get; private set; }
 
-    [HideInInspector] public AudioSource audioSource;
+    public AudioSource audioSource;
+    public GameObject vCameraGO;
+    public Transform cameraTargetTF;
 
     private void Awake()
     {

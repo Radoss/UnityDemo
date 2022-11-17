@@ -4,10 +4,12 @@
 
 namespace InteractionSystem
 {
-    public class CompMonitor : Interactable
+    public class CompMonitor : MonoBehaviour, Iinteractable
     {
         [SerializeField] Computer _computer;
-        public override void Interact()
+        [SerializeField] private float _radius = 5;
+        public float radius { get { return _radius; } }
+        public void Interact()
         {
             _computer.OpenComputerDesktop();
         }

@@ -7,20 +7,26 @@ using DialogSystem;
 
 namespace InteractionSystem
 {
-    public class DialogStarter : Interactable
+    public class DialogStarter : MonoBehaviour, Iinteractable
     {
         [SerializeField] private ConversationLine firstConversationLine;
+        [SerializeField] private float _radius = 5;
+        public float radius { get { return _radius; } }
 
         DialogManager _dialogManager;
         Animator animator;
 
-        private void Start()
+        private void Awake()
         {
-            _dialogManager = DialogManager.instance;
             animator = GetComponent<Animator>();
         }
 
-        public override void Interact()
+        private void Start()
+        {
+            _dialogManager = DialogManager.instance;
+        }
+
+        public void Interact()
         {
             StartCoroutine("rotateTowardsMe");
         }

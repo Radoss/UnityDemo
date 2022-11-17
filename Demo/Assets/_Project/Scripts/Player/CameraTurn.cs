@@ -6,9 +6,14 @@ using System;
 public class CameraTurn : MonoBehaviour
 {
     [SerializeField] float _cameraSensitivity = 2f;
-    [SerializeField] Transform _cameraTargetTF;
+    Transform _cameraTargetTF;
 
     float _rotationY = 0;
+
+    private void Start()
+    {
+        _cameraTargetTF = Player.instance.cameraTargetTF;
+    }
 
     void Update()
     {

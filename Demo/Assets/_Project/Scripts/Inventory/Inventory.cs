@@ -27,30 +27,16 @@ namespace InventorySystem
         public delegate void OnItemNumberChanged();
         public OnItemNumberChanged onItemsChangedCallback;
 
-        private int _clampedInventorySize; // приведенное к промежутку между 1 и 9 значение, введённое в инспекторе (9 - максимальный размер инвентаря, 1 - минимальный)
+        [SerializeField][Range (1,9)] private int _inventorySize; // приведенное к промежутку между 1 и 9 значение, введённое в инспекторе (9 - максимальный размер инвентаря, 1 - минимальный)
         [HideInInspector]
-        public int inventorySize
-        {
-            get
-            {
-                return _clampedInventorySize;
-            }
-            private set
-            {
-                _clampedInventorySize = Mathf.Clamp(value, 1, 9);
-            }
-        }
+        public int inventorySize { get { return _inventorySize; } }
 
         public Item selectedItem { get; private set; } // что мы "держим в руках" и, в теории, готовы применить
         public List<Item> items { get; private set; }
 
-        [SerializeField] int _inventorySize = 5; // значение, введённое в инспекторе
-
         private void Start()
         {
             items = new List<Item>();
-
-            inventorySize = _inventorySize;
         }
 
         public bool AddItem(Item newItem)
