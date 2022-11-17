@@ -7,28 +7,26 @@ namespace InteractionSystem
 {
     public class CompUnit : MonoBehaviour, Iinteractable
     {
-        [SerializeField] Computer _computer;
+        //[SerializeField] Computer _computer;
+        [SerializeField] private GameObject _flashDriveGO;
         [SerializeField] private float _radius = 5;
+        [SerializeField] private string _expectedItemName = "FlashDrive";
         public float radius { get { return _radius; } }
         Item _selectedItem;
 
         public void Interact()
         {
             _selectedItem = Inventory.instance.selectedItem;
-            if (_selectedItem && _selectedItem.name == _computer.expectedItemName)
+            if (_selectedItem && _selectedItem.name == _expectedItemName)
             {
                 UseFlashDrive();
-            }
-            else
-            {
-                _computer.OpenComputerDesktop();
             }
         }
 
         private void UseFlashDrive()
         {
             Inventory.instance.Remove(Inventory.instance.selectedItem);
-            //_computer.UseFlashDrive();
+            _flashDriveGO.SetActive(true);
             GameEvents.instance.FlashDriveUsed();
         }
 
