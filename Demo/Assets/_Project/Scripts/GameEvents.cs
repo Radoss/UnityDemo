@@ -19,6 +19,8 @@ public class GameEvents : MonoBehaviour
 
     public event Action onHideInventoryRequested;
     public event Action onShowInventoryRequested;
+    public event Action onHideAimRequested;
+    public event Action onShowAimRequested;
     public event Action onFlashDriveUsed;
     public void HideInventoryRequested()
     {
@@ -32,6 +34,20 @@ public class GameEvents : MonoBehaviour
         if (onShowInventoryRequested != null)
         {
             onShowInventoryRequested();
+        }
+    }
+    public void HideAimRequested()
+    {
+        if (onHideAimRequested != null)
+        {
+            onHideAimRequested();
+        }
+    }
+    public void ShowAimRequested()
+    {
+        if (onShowAimRequested != null)
+        {
+            onShowAimRequested();
         }
     }
     public void FlashDriveUsed()

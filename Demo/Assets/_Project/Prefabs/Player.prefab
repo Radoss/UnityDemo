@@ -3781,6 +3781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
+  vCameraGO: {fileID: 0}
+  cameraTargetTF: {fileID: 0}
 --- !u!114 &923185582409561944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3836,7 +3838,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraSensitivity: 2
-  _cameraTargetTF: {fileID: 8028904038892842807}
 --- !u!1 &6022605544832417071
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,7 +4864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8028904039828142440
 Transform:
   m_ObjectHideFlags: 0
@@ -4871,8 +4872,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8028904039828142443}
-  m_LocalRotation: {x: 0.000000109834325, y: 0.8257065, z: -0.5641, w: 0.00000016077098}
-  m_LocalPosition: {x: 0.195, y: 2.508154, z: 0.24584629}
+  m_LocalRotation: {x: -0.00000006798654, y: -0.8257064, z: 0.5641001, w: -0.0000000996515}
+  m_LocalPosition: {x: 0.195, y: 2.5081544, z: 0.24584642}
   m_LocalScale: {x: 0.7692308, y: 0.76923084, z: 0.76923084}
   m_ConstrainProportionsScale: 0
   m_Children:

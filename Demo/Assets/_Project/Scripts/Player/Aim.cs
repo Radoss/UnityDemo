@@ -16,6 +16,22 @@ public class Aim : MonoBehaviour
         _mainCamera = Camera.main;
     }
 
+    private void Start()
+    {
+        GameEvents.instance.onShowInventoryRequested += onShowInventoryRequested;
+        GameEvents.instance.onHideAimRequested += onHideAimRequested;
+    }
+
+    private void onShowInventoryRequested()
+    {
+        _aimImage.gameObject.SetActive(true);
+    }
+
+    private void onHideAimRequested()
+    {
+        _aimImage.gameObject.SetActive(false);
+    }
+
     /* Рейкастим с цетра экрана, если натыкаемся на interractable, 
      * если расстояние позволяет, красим прицел красным. 
      * Если зажата E, то взаимодействуем
